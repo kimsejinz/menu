@@ -6,76 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        @font-face { 
-            font-family: 'RixInooAriDuriR';
-            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/RixInooAriDuriR.woff2') format('woff2');
-            font-weight: normal;
-            font-style: normal;
-        }
-        .wrap{
-            width: 90vw;
-            margin: 0 auto;
-            text-align: center;
-            font-family: 'RixInooAriDuriR';
-        }
-        p{
-            margin-top: 160px;
-            margin-bottom: 100px;
-            font-size: 90px;
-            letter-spacing: 1px;
-            line-height: 1.2;
-        }
-        .color{
-            color: rgb(57, 230, 14);
-            letter-spacing: 2px;
-        }
-        .btn{
-            color: rgb(57, 230, 14);
-            padding: 2px;
-            font-family: 'RixInooAriDuriR';
-            border: none;
-            background: none;
-            font-size: 30px;
-            width: 130px;
-        }
-        .reset{
-            color: #000;
-        }
-        .menu_value{
-            border-bottom: 5px solid  rgb(57, 230, 14);
-            width: 90vw;
-            line-height: 40px;
-            padding-bottom: 40px;
-            margin-bottom: 50px;
-        }
-        .random{
-            font-size: 48px;
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-        }
-        .btn_box{
-            display: flex;
-            justify-content: space-around;
-        }
-    </style>
-</head>
-<body>
-    <div class="wrap">
-        <p>
-            오늘의<br> <span class="color">점심</span>은 ? <br>
-        </p>
-        <div class="menu_value">
-            <span class="random" id="menu">🍕🍔🍟🌭</span>
-        </div>
-        <div class="btn_box">
-            <button id="startBtn" class="btn">START</button>
-            <button onclick="location.reload()" class="btn reset">Reset</button>    
-        </div>
-    </div>
-</body>
-
-<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
     var btn_state = 'stop'; // 버튼 상태 값 
     var interval1;
@@ -146,6 +77,73 @@
             $('#menu').text(arr1[idx1++]);
         }
     }
-
 </script>
+    <style>
+        @font-face { 
+            font-family: 'RixInooAriDuriR';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/RixInooAriDuriR.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+        .wrap{
+            width: 90vw;
+            margin: 0 auto;
+            text-align: center;
+            font-family: 'RixInooAriDuriR';
+        }
+        p{
+            margin-top: 130px;
+            margin-bottom: 100px;
+            font-size: 90px;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+        .color{
+            color: rgb(57, 230, 14);
+            letter-spacing: 2px;
+        }
+        .btn{
+            color: rgb(57, 230, 14);
+            padding: 2px;
+            font-family: 'RixInooAriDuriR';
+            border: none;
+            background: none;
+            font-size: 30px;
+            width: 130px;
+        }
+        .reset{
+            color: #000;
+        }
+        .menu_value{
+            border-bottom: 5px solid  rgb(57, 230, 14);
+            width: 90vw;
+            line-height: 40px;
+            padding-bottom: 40px;
+            margin-bottom: 50px;
+        }
+        .random{
+            font-size: 48px;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .btn_box{
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <p>
+            오늘의<br> <span class="color">점심</span>은 ? <br>
+        </p>
+        <div class="menu_value">
+            <span class="random" id="menu">🍕🍔🍟🌭</span>
+        </div>
+        <div class="btn_box">
+            <button id="startBtn" class="btn">START</button>
+            <button onclick="location.reload()" class="btn reset">Reset</button>    
+        </div>
+    </div>
+</body>
 </html>
