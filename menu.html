@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face { 
+            font-family: 'RixInooAriDuriR';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/RixInooAriDuriR.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+        .wrap{
+            width: 90vw;
+            margin: 0 auto;
+            text-align: center;
+            font-family: 'RixInooAriDuriR';
+        }
+        p{
+            margin-top: 160px;
+            margin-bottom: 100px;
+            font-size: 90px;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+        .color{
+            color: rgb(57, 230, 14);
+            letter-spacing: 2px;
+        }
+        .btn{
+            color: rgb(57, 230, 14);
+            padding: 2px;
+            font-family: 'RixInooAriDuriR';
+            border: none;
+            background: none;
+            font-size: 30px;
+            width: 130px;
+        }
+        .reset{
+            color: #000;
+        }
+        .menu_value{
+            border-bottom: 5px solid  rgb(57, 230, 14);
+            width: 90vw;
+            line-height: 40px;
+            padding-bottom: 40px;
+            margin-bottom: 50px;
+        }
+        .random{
+            font-size: 48px;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .btn_box{
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <p>
+            오늘의<br> <span class="color">점심</span>은 ? <br>
+        </p>
+        <div class="menu_value">
+            <span class="random" id="menu">🍕🍔🍟🌭</span>
+        </div>
+        <div class="btn_box">
+            <button id="startBtn" class="btn">START</button>
+            <button onclick="location.reload()" class="btn reset">Reset</button>    
+        </div>
+    </div>
+</body>
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+    var btn_state = 'stop'; // 버튼 상태 값 
+    var interval1;
+    var interval2;
+
+    function btncss() {
+        $('#startBtn').css('color', '#rgb(57, 230, 14);');
+        $('#startBtn').css('font-size', '30px');
+    }
+
+    $(document).on('click', '#startBtn', function(){
+        if(btn_state == 'stop') {
+            $('#startBtn').text('STOP');
+            console.log(btn_state)
+
+            btncss(); // 조건이 맞으면 btnclass 함수안에 있는 css가 적용
+        } // startBtn을 클릭 시 btn_state가 stop과 같으면 start 버튼 문구를 stop로 출력해라
+        else {
+            $('#startBtn').text('START');
+            btncss();
+        } // 아닐 경우 start로 출력해라
+        ex02(); // 아닐 경우 ex02 함수가 실행 됨  
+    });
+
+    function ex02() {
+        var arr1= [
+                "배부장찌개",
+                "순정감자탕",
+                "계림",
+                "두루치기",
+                "스지곰탕",
+                "바스버거",
+                "봉추찜닭",
+                "부대찌개",
+                "은희네해장국",
+                "우사기",
+                "짜앤짬",
+                "온달",
+                "하루앤소쿠",
+                "샤브샤브",
+                "겐코",
+                "컵스탑",
+                "배꼽집",
+                "우육면",
+                "닭갈비",
+                "본설렁탕",
+                "호미정",
+                "돌솥비빔밥",
+                "마라탕",
+                "순두부찌개+제육",
+                "청년다방",
+                "북창동순두부",
+                "이화수전통육개장"
+        ];
+        var idx1 = 0;
+        if(btn_state == 'stop') {
+            interval1 = setInterval(setText01, 50); // 일정 시간 간격으로 interval1 함수 반복 실행 
+            btn_state = 'start';
+        }else {
+            clearInterval(interval1); // 실행 되고있는 interval1을 중지
+            btn_state = 'stop';
+        }
+
+        function setText01() {
+            if(idx1 >= arr1.length) {
+                    idx1 = 0; // 이게 없으면 1바퀴만 돈다. 
+            } // idx1가 arr1의 lenght보다 크거나 같을 경우 menu의 텍스트의 배열을 증가한다. 
+            $('#menu').text(arr1[idx1++]);
+        }
+    }
+
+</script>
+</html>
