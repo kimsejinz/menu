@@ -1,4 +1,3 @@
-window.onload = function () {
 var btn_state = 'stop'; 
     var interval1;
     var interval2;
@@ -68,4 +67,3 @@ var btn_state = 'stop';
             $('#menu').text(arr1[idx1++]);
         }
     }
-}
